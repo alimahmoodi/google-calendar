@@ -15,6 +15,10 @@ export default function CalendarHeader() {
     setMonth(dayjs().month());
   };
 
+  const nextYear = () => {
+    setMonth(monthIndex + 12);
+  };
+
   console.log(dayjs().year(), "year");
   return (
     <header className="px-4 py-2 flex items-center">
@@ -25,6 +29,13 @@ export default function CalendarHeader() {
         className="mx-10 border rounded py-2 px-4 mr-5"
       >
         today
+      </button>
+
+      <button
+        onClick={nextYear}
+        className="mx-10 border rounded py-2 px-4 mr-5"
+      >
+        next year
       </button>
       <button onClick={handlePrevMonth}>
         <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2">
